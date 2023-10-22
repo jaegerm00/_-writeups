@@ -2,7 +2,7 @@
 
 ### _/usr/share/wordlists/rockyou.txt_ will contain all answers
 
-### _hashcat will do work for all tasks_
+### _hashcat will do the work for all tasks_
 
 [all hash examples from hashcat](https://hashcat.net/wiki/doku.php?id=example_hashes)
 
